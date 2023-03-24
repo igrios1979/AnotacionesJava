@@ -1,3 +1,24 @@
+Características principales de las anotaciones en Java
+Las anotaciones en Java son una funcionalidad muy útil que se introdujo en la versión 5 de Java. A continuación, se describen algunas de sus principales características:
+
+Las anotaciones se definen utilizando el símbolo "@<span style="color: blue">nombre_de_la_anotación</span>". Por ejemplo, la anotación <span style="color: blue">@Override</span> se utiliza para indicar que un método anula un método de la superclase.
+
+Las anotaciones se pueden utilizar para proporcionar metadatos adicionales sobre clases, métodos, variables y otros elementos del programa. Por ejemplo, puedes utilizar la anotación <span style="color: blue">@Deprecated</span> para indicar que un método o una clase ya no se deben utilizar.
+
+Las anotaciones se pueden utilizar para definir restricciones y validaciones en tiempo de compilación. Por ejemplo, puedes utilizar la anotación <span style="color: blue">@NotNull</span> para indicar que un parámetro de método no puede ser nulo.
+
+Las anotaciones pueden tener atributos, que se definen dentro de los paréntesis después del nombre de la anotación. Los atributos se pueden utilizar para proporcionar información adicional a la anotación. Por ejemplo, la anotación <span style="color: blue">@Column</span> en el marco de trabajo JPA tiene un atributo "name" que se utiliza para especificar el nombre de la columna en la base de datos.
+
+Las anotaciones se pueden retener en tiempo de compilación, en tiempo de ejecución o en tiempo de ejecución y carga dinámica. Por defecto, las anotaciones se retienen en tiempo de compilación, pero esto se puede cambiar utilizando la anotación <span style="color: blue">@Retention</span>.
+
+Las anotaciones se pueden aplicar a elementos específicos utilizando la anotación <span style="color: blue">@Target</span>. Por ejemplo, la anotación <span style="color: blue">@Target(ElementType.FIELD)</span> se aplica solo a campos de clase.
+
+En resumen, las anotaciones son una característica poderosa y flexible de Java que se pueden utilizar para proporcionar metadatos adicionales, definir restricciones y validaciones en tiempo de compilación y mucho más. Las anotaciones son ampliamente utilizadas en marcos de trabajo como Spring y Hibernate, y son una parte importante del desarrollo de Java moderno.
+
+
+
+
+
 **La reflexión en Java** es una característica que permite a un programa examinar y modificar su propia estructura y comportamiento en tiempo 
 de ejecución. Con la reflexión, un programa puede examinar información sobre las clases y objetos que se están ejecutando, 
 como el nombre de la clase, los campos y métodos definidos en la clase, las interfaces que implementa la clase, etc.
