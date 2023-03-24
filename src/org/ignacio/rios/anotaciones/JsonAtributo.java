@@ -9,12 +9,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 
 public @interface JsonAtributo {
-
     String nombre() default "";
-
-
-
-
-
-
+    boolean amayusculas() default false;
 }

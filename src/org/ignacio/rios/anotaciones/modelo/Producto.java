@@ -3,26 +3,41 @@ package org.ignacio.rios.anotaciones.modelo;
 import org.ignacio.rios.anotaciones.JsonAtributo;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Producto {
 
-    @JsonAtributo(nombre = "description")
+    @JsonAtributo(amayusculas = true)
     private String nombre;
 
     @JsonAtributo
     private Long precio;
 
-
+    @JsonAtributo
     private LocalDate fecha;
+
+    @JsonAtributo
+    private LocalTime hora;
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+
 
 
     public Producto() {
     }
 
-    public Producto(String nombre, Long precio, LocalDate fecha) {
+    public Producto(String nombre, Long precio, LocalDate fecha, LocalTime hora) {
         this.nombre = nombre;
         this.precio = precio;
         this.fecha = fecha;
+        this.hora = hora;
     }
 
     public String getNombre() {

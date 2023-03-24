@@ -107,3 +107,19 @@ Nombre de la clase: Persona Atributos de la clase:
 
 
 **Como se puede ver, la reflexión nos permite obtener información útil sobre la estructura de una clase, lo que puede ser útil en diferentes situaciones.***
+
+
+
+Este código en Java convierte un objeto Java en una cadena JSON. Veamos cómo funciona línea por línea:
+
+String json = Arrays.stream(campos): Inicializa una variable de tipo String llamada json con el valor que se obtiene al aplicar un stream sobre el arreglo campos.
+
+.filter(f -> f.isAnnotationPresent(JsonAtributo.class)): Se aplica el método filter del Stream para seleccionar solo los campos que tengan la anotación JsonAtributo. El resultado es un nuevo Stream que solo contiene los campos que cumplen esa condición.
+
+.map(f -> {f.setAccessible(true); String nombre = f.getAnnotation(JsonAtributo.class).nombre().equals("") ? f.getName() : f.getAnnotation(JsonAtributo.class).nombre(); try {return "\""+nombre +"\":\"" + f.get(p) + "\""; } catch (IllegalAccessException e) {throw new RuntimeException("Error de serializacion a Json"+e.getMessage());}}): Se aplica el método map del Stream para transformar cada campo seleccionado en una cadena JSON. Dentro del map, se establece el campo como accesible mediante f.setAccessible(true), se obtiene el nombre del campo (ya sea a través del valor de la anotación JsonAtributo o del nombre del campo) y se intenta obtener su valor con el método f.get(p). Si no se puede acceder al campo, se lanza una excepción. Luego, se devuelve una cadena JSON que representa el campo.
+
+.reduce("{",(a,b) -> {if("{".equals(a)){return a+b;} return a+","+b;}).concat("}");: Se aplica el método reduce del Stream para unir todas las cadenas JSON generadas en un solo objeto JSON. En este caso, se utiliza "{" como valor inicial y luego se concatena cada cadena JSON con una coma (,) a excepción de la primera. Finalmente, se concatena una llave (}) al final de la cadena resultante.
+
+System.out.println(json);: Imprime la cadena JSON resultante en la consola.
+
+En resumen, este código toma un objeto Java y lo convierte en una cadena JSON. Para ello, utiliza la anotación JsonAtributo para seleccionar los campos a incluir en el objeto JSON y los transforma en cadenas JSON utilizando el nombre del campo y su valor. Luego, une todas las cadenas JSON generadas en un solo objeto JSON y lo imprime en la consola.
