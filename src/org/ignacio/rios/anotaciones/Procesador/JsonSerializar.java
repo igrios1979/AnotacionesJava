@@ -5,8 +5,9 @@ import org.ignacio.rios.anotaciones.Procesador.Execpcion.JasonSerializadorExcept
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import java.util.Locale;
+
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class JsonSerializar {
 
@@ -32,9 +33,14 @@ public class JsonSerializar {
                         Object valor = f.get(objeto);
                         if(f.getAnnotation(JsonAtributo.class).amayusculas()
                                 && valor instanceof String){
+
                             String nvo = (String) valor;
-                            nvo = nvo.substring(0,1).toUpperCase(Locale.ROOT) +
-                                   nvo.substring(1).toLowerCase();
+                         /*   nvo = nvo.substring(0,1).toUpperCase(Locale.ROOT) +
+                                   nvo.substring(1).toLowerCase();*/
+                             nvo = Arrays.stream(nvo.split(" "))
+                                     .map(word -> word.substring(0,1).toUpperCase() + word.substring(1).toLowerCase())
+                                     .collect(Collectors.joining(" "));
+
                             f.set(objeto,nvo);
 
 

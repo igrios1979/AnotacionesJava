@@ -109,6 +109,24 @@ Nombre de la clase: Persona Atributos de la clase:
 **Como se puede ver, la reflexión nos permite obtener información útil sobre la estructura de una clase, lo que puede ser útil en diferentes situaciones.***
 
 
+java.lang.reflect.Field 
+es una clase del paquete java.lang.reflect en
+Java que representa un campo o variable de instancia de una clase. 
+La clase Field proporciona métodos para acceder y modificar el valor de un campo, 
+así como para obtener información sobre su tipo y su modificador de acceso.
+Algunos de los métodos más comunes de la clase Field son:
+
+
+getName(): Devuelve el nombre del campo.
+getType(): Devuelve un objeto Class que representa el tipo de dato del campo.
+getModifiers(): Devuelve el modificador de acceso del campo como un entero.
+get(Object obj): Devuelve el valor del campo para el objeto especificado.
+set(Object obj, Object value): Establece el valor del campo para el objeto especificado.
+La clase Field es útil para trabajar con campos dinámicamente en tiempo de ejecución, lo que permite a los programadores crear aplicaciones más flexibles y adaptables.
+
+
+
+
 
 Este código en Java convierte un objeto Java en una cadena JSON. Veamos cómo funciona línea por línea:
 

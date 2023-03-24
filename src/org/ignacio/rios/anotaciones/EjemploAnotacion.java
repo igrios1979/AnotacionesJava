@@ -16,7 +16,7 @@ public class EjemploAnotacion {
         Producto p = new Producto();
         p.setFecha(LocalDate.now());
         p.setHora(LocalTime.now());
-        p.setNombre("silla");
+        p.setNombre("silla ratona de Jardin");
         p.setPrecio(1000L);
 
 
