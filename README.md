@@ -1,4 +1,5 @@
 Características principales de las anotaciones en Java
+
 Las anotaciones en Java son una funcionalidad muy útil que se introdujo en la versión 5 de Java. A continuación, se describen algunas de sus principales características:
 
 Las anotaciones se definen utilizando el símbolo "@<span style="color: blue">nombre_de_la_anotación</span>". Por ejemplo, la anotación <span style="color: blue">@Override</span> se utiliza para indicar que un método anula un método de la superclase.
